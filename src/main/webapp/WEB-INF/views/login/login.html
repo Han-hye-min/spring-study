@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	.contrainer{
+		height: 100vh;
+		display:flex;
+		flex-direction:row;
+		justify-content: center;
+		align-items: center;
+		background-color : #80808080;
+		}
+	.content{
+		width:600px;
+		height: 300px;
+		border:1px solid black;
+		border-radius:15px;
+		box-shadow: 1px -3px 15px 6px #ffffff;
+		background-color: #fffcfb;
+	}
+	.login-frm{
+		list-style-type: none;
+	}
+	.txt-title{
+		text-align:center;
+		font-size: 40px;
+		font-weight: 600px;
+		margin-top: 15px;
+		margin-bottom : 30px;
+	}
+	.login-frm li{
+		margin-bottom:15px;
+	}
+	.login-frm li label {
+		display : inline-block;
+		width: 120px;
+		text-align : right;
+		font-weight : bold;
+		height:30px
+	}
+	.txt-field{
+		width:300px;
+		height:40px;
+		margin-left:5px;
+		outline: none;
+		border:none;
+		border-bottom: 2px solid black;
+		font-size:18px;
+	}
+	.btn-area{
+		text-align: center;
+		margin-top: 20px;
+	}
+	.btn{
+		width: 100px;
+		height: 50px;
+		background-color: white;
+		border:none;
+		font-size:20px;
+		color:white;
+		font-weight: bold;
+		border-radius:8px;
+		
+	}
+	.btn.btn-ok{
+		background-color: #6495ed;
+	}
+	.btn.btn-join{
+		background-color: #20b2aa;
+	}
+</style>
+<body>
+	<main class="contrainer">
+		<div class="content">
+			<div class="txt-title">Login</div>
+			<ul class="login-frm">
+				<li>
+					<label for="memId">아이디 : </label>
+					<input type="text" class='txt-field' id="memId" name="memId">
+				</li>
+				<li>
+					<label for="memPasswd">비밀번호 : </label>
+					<input type="password" class='txt-field' id="memPasswd" name="memPasswd">
+				</li>
+				<li>
+				<div class="btn-area">
+					<button type="button" class="btn btn-ok">로그인</button>
+					<button type="button" class="btn btn-join">회원가입</button>
+				</div>
+				</li>
+			</ul>
+		</div>
+	</main>
+</body>
+</html>

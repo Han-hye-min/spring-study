@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+   <settings>         
+       <setting name="mapUnderscoreToCamelCase" value="true"/>
+   </settings>
+   
+<typeAliases>
+	<typeAlias type="java.util.Map" alias="map"/>
+	<typeAlias type="kr.com.web.board.vo.NoticeVO$NoticeList" alias="noticeList"/>
+	<typeAlias type="kr.com.web.board.vo.NoticeVO$Notice" alias="notice"/>
+	<typeAlias type="kr.com.web.board.vo.NoticeFileVO" alias="noticeFile"/>
+	<typeAlias type="kr.com.web.board.vo.NoticeVO$NoticeReq" alias="noticeReq"/>
+</typeAliases>
+
+</configuration>

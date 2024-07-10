@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	.header{
+		line-height: 100px;
+		height: 100px;
+		background-color: #ffa07a;
+	}
+	.menu{
+		display: flex;
+	}
+	.menu-item{
+		
+		list-style-type: none;
+	}
+	.menu-item.rank1 {
+		flex: 1;
+		flex-basis: 10%;
+	}
+	.menu-item.rank2 {
+		flex:1;
+		flex-basis: 80%;
+		text-align: right;
+		margin-right:20px;
+	}
+	.menu-link{
+		font-weight: bold;
+		text-align: center;
+		color: white;
+		font-size: 1.2rem;
+	}
+	.menu-link:hover {
+		color: #2828cd;
+	}
+	.menu > .menu-item > a{
+		text-decoration: none;
+	}
+</style>
+<link rel="stylesheet" href="/webjars/bootstrap/4.6.2/css/bootstrap.min.css">
+
+</head>
+<body>
+	<header>
+		<nav class="header">
+			<ul class="menu">
+				<li class="menu-item rank1">
+					<a href="javascript:void(0);" class="menu-link">HOME</a>
+				</li>
+				<li class="menu-item rank1">
+					<a href="javascript:void(0);" class="menu-link">게시판</a>
+				</li>
+				<li class="menu-item rank2">
+					<a href="javascript:void(0);" class="menu-link">로그인</a>
+				</li>
+				<li class="menu-item rank2">
+					관리자님<a href="javascript:void(0);" class="menu-link">로그아웃</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+</body>
+</html>

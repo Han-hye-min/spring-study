@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.com.web.user.mapper.LoginMapper">
+
+   <select id="getLoginUser" 
+   			parameterType="java.util.Map" 
+   			resultType="kr.com.web.user.vo.UserVO">
+   
+       select mem_id,
+              mem_name,
+              mem_birth,
+              mem_gender
+       from members
+       where mem_id =  #{memId}
+           and mem_passwd = #{memPasswd}
+   </select>
+</mapper>

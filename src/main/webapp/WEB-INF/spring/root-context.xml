@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	https://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+	
+
+   <!-- mybatis 설정 -->
+	<mybatis-spring:scan base-package="kr.com.web"/>
+
+    
+    <!-- 데이베이스 연동  -->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+      <property name="driverClassName" value="org.mariadb.jdbc.Driver" />
+      <property name="url" value="jdbc:mariadb://localhost:3306/boot_web"  />
+      <property name="username" value="root"  />
+      <property name="password" value="han010215"  />
+    </bean>
+    
+    <bean id ="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    	<property name="configLocation" value="classpath:config/mybatis-config.xml" />
+    	<property name="mapperLocations" value="classpath*:sql/**/*.xml"/>
+    	<property name="dataSource" ref="dataSource" />
+    
+    </bean>	
+    
+     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory" />
+    </bean>
+    
+        <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="transactionTemplate"
+          class="org.springframework.transaction.support.TransactionTemplate">
+        <property name="transactionManager" ref="transactionManager" />
+    </bean>
+    
+
+</beans>
